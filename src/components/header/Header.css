@@ -1,0 +1,7 @@
+.header_main_div  h1{
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #4e4e4e; 
+    padding-top: 2.2%;
+}

@@ -1,0 +1,17 @@
+.post-detail_main_div {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(112, 112, 112, 0.8);
+    z-index: 10000;
+}
+
+.post-detail_inner_div {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 0 6px 6px rgb(255 192 1);
+}

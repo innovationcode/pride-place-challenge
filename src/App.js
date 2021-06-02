@@ -12,8 +12,8 @@ function App() {
     <div className="App">
       <Header />
       
-      {/* <Route exact path={["/"]} component={PostList} /> */}
-      <Route exact path={["/posts/:id"]} component={PostsDetail }/>
+      <Route exact path={["/"]} component={PostList} />
+      <Route exact path={["/posts/:id/:userId"]} component={PostsDetail }/>
     </div>
   );
 }

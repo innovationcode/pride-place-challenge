@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
+
 import "./PostsDetail.css";
 
 const PostsDetail = (id, userId) => {
@@ -10,6 +12,7 @@ const PostsDetail = (id, userId) => {
     const [post, setPost] = useState();
     const [user, setUser] = useState();
     const [showPostDetail, setShowPostDetail] = useState(true)
+    const history = useHistory();
 
     console.log("POST ==> ", post)
     console.log("UESR ==> ", user)
@@ -27,7 +30,7 @@ const PostsDetail = (id, userId) => {
 
     const handleClose = () => {
         setShowPostDetail(false)
-        // history.push('/')
+        history.push('/')
     }
 
     return (
@@ -36,6 +39,15 @@ const PostsDetail = (id, userId) => {
             <div className = "post-detail_main_div">
                 <div className = "post-detail_inner_div">
                     <span className = "show_post_detail_close" onClick = {() => {handleClose()}}>x</span>
+                    {post&&user ? (
+                        <div className = "post-detail">
+                            <h1>Post details</h1>
+                            <p><span>Post author's name :- </span>&nbsp;&nbsp;&nbsp;{user.name}</p>
+                            <p><span>Post author's catchPhrase :- </span>{user.company.catchPhrase}</p> 
+                            <p><span>Post title :- </span>{post.title}</p>
+                            <p><span>Post body :- &nbsp;</span> {post.body}</p> 
+                        </div>
+                    ) : (null)}
                     
                 </div>
             </div>
